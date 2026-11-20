@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>LKW WALTER Case Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F3F2EE; --bg-alt: #E8E3DC; --card: #FAF9F6; --ink: #1E2023; --muted: #4A4D52;
+    --line: #D9D5CE; --red: #C8381E; --dark: #1E2023; --code: #E8E3DC;
+  }
+  @page { size: 1456px 819px; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); color: var(--ink); font-family: Inter, sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .slide { width: 1456px; height: 819px; padding: 64px 97px 48px; position: relative; overflow: hidden; page-break-after: always; background: var(--bg); }
+  .slide.alt { background: var(--bg-alt); }
+  h1 { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 40px; letter-spacing: -0.5px; margin-bottom: 34px; }
+  h2 { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 22px; line-height: 1.25; margin-bottom: 14px; }
+  .label { color: var(--red); font-weight: 600; font-size: 16px; margin-bottom: 12px; }
+  .grid { display: grid; gap: 30px; }
+  .card { background: var(--card); border-top: 4px solid var(--dark); padding: 24px 24px 22px; }
+  .card.red { border-top-color: var(--red); }
+  ul { padding-left: 20px; }
+  li { font-size: 16.5px; line-height: 1.5; color: var(--muted); margin-bottom: 5px; }
+  li b { color: var(--ink); font-weight: 600; }
+  p { font-size: 16.5px; line-height: 1.5; color: var(--muted); }
+  .big { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 72px; line-height: 1; margin: 2px 0 10px; letter-spacing: -1px; }
+  .big.red { color: var(--red); }
+  .lead { font-weight: 600; color: var(--ink); font-size: 17px; line-height: 1.4; margin-bottom: 14px; }
+  .kr { display: grid; grid-template-columns: 44px 1fr; row-gap: 7px; font-size: 16px; color: var(--ink); }
+  .kr span:nth-child(odd) { color: var(--red); font-weight: 600; }
+  .footer { position: absolute; left: 97px; right: 97px; bottom: 40px; display: flex; justify-content: space-between; font-size: 15px; color: var(--muted); }
+  .band { background: var(--dark); color: #F3F2EE; display: grid; grid-template-columns: repeat(4, 1fr); padding: 20px 24px; margin-top: 26px; gap: 20px; }
+  .band .n { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 30px; }
+  .band .t { font-size: 14.5px; color: #C9C6C0; line-height: 1.35; }
+  .callout { background: var(--card); border-left: 5px solid var(--red); padding: 14px 20px; font-size: 16.5px; line-height: 1.45; }
+  pre { font-family: "JetBrains Mono", monospace; font-size: 13.5px; line-height: 1.5; background: var(--code); padding: 14px 16px; color: var(--ink); white-space: pre; }
+  /* flow */
+  .flow { display: flex; align-items: stretch; gap: 0; margin-bottom: 30px; }
+  .step { flex: 1; border: 1.5px solid var(--dark); background: var(--card); padding: 10px 11px; font-size: 14px; line-height: 1.3; color: var(--muted); min-height: 82px; }
+  .step b { display: block; color: var(--ink); font-size: 15px; margin-bottom: 3px; }
+  .step.llm { background: var(--red); border-color: var(--red); color: #fff; }
+  .step.llm b { color: #fff; }
+  .arrow { width: 22px; display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--dark); flex: 0 0 22px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 9px; }
+  .pill { border: 1.5px solid var(--dark); border-radius: 6px; padding: 5px 11px; font-size: 15px; font-weight: 500; background: #fff; }
+  .pill.red { border-color: var(--red); color: var(--red); }
+  .note { font-size: 13.5px; color: var(--muted); margin-top: 12px; font-style: italic; }
+  /* table */
+  table { width: 100%; border-collapse: collapse; font-size: 15.5px; background: var(--card); }
+  th { background: #E3DFD8; text-align: left; font-weight: 600; padding: 9px 12px; border: 1px solid var(--line); }
+  td { padding: 8px 12px; border: 1px solid var(--line); color: var(--ink); }
+  td.d { font-weight: 600; white-space: nowrap; }
+  .ok { color: #2F7A3E; } .ask { color: #9A6A00; } .hum { color: var(--red); } .ign { color: #6B6E73; }
+  /* roadmap */
+  .phase .when { color: var(--red); font-weight: 600; font-size: 15.5px; margin-bottom: 8px; }
+  .phase h2 { font-size: 21px; margin-bottom: 8px; }
+  .phase .exit { border-top: 1px solid var(--line); margin-top: 12px; padding-top: 10px; font-size: 15.5px; color: var(--ink); }
+</style>
+</head>
+<body>
+
+<!-- 1 · WHY -->
+<section class="slide">
+  <h1>Slow email quotes cost us half of all price requests</h1>
+  <div class="grid" style="grid-template-columns: 1fr 1fr 1fr;">
+    <div class="card red">
+      <div class="label">Problem</div>
+      <div class="big red">~50%</div>
+      <p class="lead">of price requests are lost because the answer arrives too late</p>
+      <ul>
+        <li>280 price requests a day by email</li>
+        <li>45% arrive incomplete (weight, date missing)</li>
+        <li>Median reply: 4 h, or 26 h if we must ask back</li>
+        <li>Conversion of requests to orders: 12%</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="label">Solution</div>
+      <h2>An AI workflow for the pricing inbox</h2>
+      <ul>
+        <li>Reads every email and extracts the 4 required fields</li>
+        <li>Asks the customer when data is missing</li>
+        <li>Gets the price from the pricing API and replies</li>
+        <li>Hands exceptions to the team, with the reason</li>
+      </ul>
+      <p class="lead" style="margin-top:14px">The LLM understands, rules decide.</p>
+    </div>
+    <div class="card">
+      <div class="label">Outcome · pilot targets</div>
+      <div class="big">&lt;10 min</div>
+      <p class="lead">to answer a standard price request, instead of hours</p>
+      <div class="kr">
+        <span>KR1</span><span>60% handled with no human step</span>
+        <span>KR2</span><span>Median reply under 10 min</span>
+        <span>KR3</span><span>Conversion from 12% to 18%</span>
+        <span>KR4</span><span>Under 0.5% of quotes with wrong data</span>
+      </div>
+    </div>
+  </div>
+  <div class="band">
+    <div><div class="n">+3,700</div><div class="t">orders a year from faster replies (hypothesis to validate)</div></div>
+    <div><div class="n">≈ €6.8M</div><div class="t">extra revenue a year, at €1,850 per order</div></div>
+    <div><div class="n">~3 FTE</div><div class="t">freed for complex loads and key accounts</div></div>
+    <div><div class="n">&lt; €100</div><div class="t">LLM running cost a year (Claude Haiku)</div></div>
+  </div>
+  <div class="footer"><span>All figures are fictional, for this case study</span><span>1</span></div>
+</section>
+
+<!-- 2 · CASE 1 -->
+<section class="slide alt">
+  <h1>Case 1: what I would clarify before building</h1>
+  <div class="grid" style="grid-template-columns: 1.15fr 0.85fr;">
+    <div class="card red">
+      <div class="label">Questions</div>
+      <ul>
+        <li>How many emails a day, and how many are price requests?</li>
+        <li>How many arrive incomplete, and which field is missing?</li>
+        <li>How fast do we reply today, and how many orders do we lose by replying late?</li>
+        <li>What is a “standard” request: only full truck loads? Without dangerous or temperature-controlled goods?</li>
+        <li>May a quote go out without a person approving it? Who is accountable if it is wrong?</li>
+        <li>Can we look up a customer’s earlier orders?</li>
+        <li>What does <b>validUntil</b> mean? In the example it ends on 10.10., before the 14.10. pick-up.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="label">Data</div>
+      <ul>
+        <li>3 months of the pricing inbox</li>
+        <li>200 emails labelled by hand: type, missing fields, outcome</li>
+        <li>Reply time and conversion per request, from the CRM</li>
+        <li>Pricing API logs: how often it is down</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout" style="margin-top:30px">Goal: a measured baseline and agreed targets before writing any code.</div>
+  <div class="footer"><span>Case study answers</span><span>2</span></div>
+</section>
+
+<!-- 3 · CASE 2 -->
+<section class="slide">
+  <h1>Case 2: flow, LLM vs rules, human in the loop</h1>
+  <div class="flow">
+    <div class="step"><b>Inbox</b>Email in</div><div class="arrow">➜</div>
+    <div class="step"><b>Dedupe</b>Rule: Message&#8209;ID</div><div class="arrow">➜</div>
+    <div class="step"><b>Thread</b>Rule: In-Reply-To</div><div class="arrow">➜</div>
+    <div class="step llm"><b>Classify + extract</b>LLM, JSON out</div><div class="arrow">➜</div>
+    <div class="step"><b>Validate</b>Rules: 4 fields</div><div class="arrow">➜</div>
+    <div class="step"><b>Decide</b>Rules</div><div class="arrow">➜</div>
+    <div class="step"><b>Price API</b>3 retries on 503</div><div class="arrow">➜</div>
+    <div class="step"><b>Reply draft</b>or human queue</div>
+  </div>
+  <div class="grid" style="grid-template-columns: 0.9fr 1.15fr 1fr;">
+    <div class="card">
+      <div class="label">States of a request</div>
+      <div class="pills">
+        <span class="pill">Received</span><span class="pill">Duplicate</span>
+        <span class="pill">Waiting for customer</span>
+        <span class="pill">Pricing pending</span><span class="pill">Answered</span>
+        <span class="pill red">With a person</span>
+      </div>
+      <p class="note">A customer’s reply in the same thread reopens “waiting for customer” and is merged with it.</p>
+    </div>
+    <div class="card">
+      <div class="label">LLM output: it reads, rules decide</div>
+<pre>{"intent": "price_request",
+ "language": "de",
+ "confidence": 0.93,
+ "requests": [{
+   "origin": "Linz",
+   "destination": "Antwerp",
+   "pickup_date": "2026-10-14",
+   "weight_kg": 24000 }]}</pre>
+    </div>
+    <div class="card red">
+      <div class="label">A person takes over when</div>
+      <ul>
+        <li>Not a price request (e.g. invoices)</li>
+        <li>Extraction confidence below 0.8</li>
+        <li>A reference cannot be resolved</li>
+        <li>Over 24 t, past date or quote above €5,000</li>
+        <li>Pricing API down for 30 min or rejects the request</li>
+      </ul>
+      <p class="note">24 t, €5,000 and 30 min are my assumptions, to confirm with the pricing desk.</p>
+    </div>
+  </div>
+  <div class="footer"><span>Case study answers</span><span>3</span></div>
+</section>
+
+<!-- 4 · CASE 3 -->
+<section class="slide alt">
+  <h1>Case 3: prototype results on the 7 sample emails</h1>
+  <table>
+    <tr><th style="width:9%">Email</th><th style="width:33%">Message</th><th style="width:17%">Decision</th><th>Why</th></tr>
+    <tr><td>E1</td><td>Linz → Antwerpen, 14.10., 24 t</td><td class="d ok">Send price</td><td>All 4 fields present, within limits</td></tr>
+    <tr><td>E1 again</td><td>Same email, delivered twice</td><td class="d ign">Ignore</td><td>Same Message-ID, no second reply</td></tr>
+    <tr><td>E2</td><td>Hamburg – Milan, “next week”</td><td class="d ask">Ask customer</td><td>Date too vague, weight missing</td></tr>
+    <tr><td>E3</td><td>Reply: 20.10., 12 t</td><td class="d ok">Send price</td><td>Merged with E2 in the same thread</td></tr>
+    <tr><td>E4</td><td>Graz → Lyon and Graz → Paris</td><td class="d ok">Send 2 prices</td><td>Two requests split and priced</td></tr>
+    <tr><td>E5</td><td>Invoice address correction</td><td class="d hum">To a person</td><td>Not a price request: accounting</td></tr>
+    <tr><td>E6</td><td>“Same route as last time”</td><td class="d hum">To a person</td><td>“Last time” cannot be resolved: no order history, low confidence</td></tr>
+  </table>
+  <div class="grid" style="grid-template-columns: 1fr 1fr 1fr; margin-top: 24px; gap: 24px;">
+    <div class="callout">
+      <b>Pricing API down:</b> after 1 call + 3 retries the request waits as “pricing pending”. No price is invented; still down after 30 min, a person takes over.
+    </div>
+    <div class="callout">
+      <b>Quality:</b> 7/7 with Claude Haiku. 99.5% correct decisions on 200 synthetic emails in 5 languages; the one miss asked the customer. 0 wrong prices sent.
+    </div>
+    <div>
+      <div class="label" style="margin-bottom:8px">Output per email (excerpt)</div>
+<pre style="font-size:13px; background: var(--card)">{"message_id": "&lt;e2-91bc@nordfood.de&gt;",
+ "decision": "ASK_CUSTOMER",
+ "reasons": ["missing pickup_date,
+              weight_kg"]}</pre>
+    </div>
+  </div>
+  <div class="callout" style="margin-top:22px; border-left-color: var(--dark)"><b>Code, setup and full JSON output:</b> <a href="https://github.com/davidespinarincon/waltergroupusecase" style="color:var(--red); font-weight:600; text-decoration:none">https://github.com/davidespinarincon/waltergroupusecase</a> · runs with <span style="font-family:'JetBrains Mono',monospace">docker compose up</span></div>
+  <div class="footer"><span>Built with AI coding agents from my spec; every rule reviewed and tested</span><span>4</span></div>
+</section>
+
+<!-- 5 · ROADMAP -->
+<section class="slide">
+  <h1>Next: prove it safely first, then scale</h1>
+  <div class="grid" style="grid-template-columns: repeat(4, 1fr); gap: 20px;">
+    <div class="card red phase">
+      <div class="when">Dec 2026 · 3 weeks</div>
+      <h2>Discovery</h2>
+      <p>3 months of inbox data, 200 labelled emails, baseline KPIs</p>
+      <div class="exit">Exit: targets confirmed</div>
+    </div>
+    <div class="card phase">
+      <div class="when">Jan–Feb 2027</div>
+      <h2>MVP in shadow mode</h2>
+      <p>The system drafts every reply; the team checks and sends</p>
+      <div class="exit">Exit: 95% of drafts correct</div>
+    </div>
+    <div class="card phase">
+      <div class="when">Mar–Apr 2027</div>
+      <h2>Pilot</h2>
+      <p>Auto-send for high-confidence cases, one market, key users</p>
+      <div class="exit">Exit: KR1–KR4 met for 4 weeks</div>
+    </div>
+    <div class="card phase">
+      <div class="when">Q2–Q3 2027</div>
+      <h2>Scale</h2>
+      <p>More markets and languages, PDF attachments, CRM link</p>
+      <div class="exit">Next: book from the quote</div>
+    </div>
+  </div>
+  <div class="grid" style="grid-template-columns: 1.3fr 0.7fr; margin-top: 26px; gap: 20px;">
+    <div class="card">
+      <div class="label">MVP scope: one pricing inbox</div>
+      <p><b style="color:var(--ink)">In:</b> German and English, full truck loads · duplicates, threads, several requests per email · follow-ups for missing fields · retries when the pricing API is down · human queue with the reason for each handover</p>
+      <p style="margin-top:8px"><b style="color:var(--ink)">Not yet:</b> price calculation, PDF attachments, bookings, CRM write-back</p>
+    </div>
+    <div class="card">
+      <div class="label">Team</div>
+      <p>Pricing desk lead as business owner, 2 key users, AI engineer, data analyst, IT ops, security &amp; GDPR</p>
+    </div>
+  </div>
+  <div class="footer"><span>Team and dates are fictional, for this case study</span><span>5</span></div>
+</section>
+
+</body>
+</html>

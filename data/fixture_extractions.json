@@ -1,0 +1,14 @@
+{
+  "<e1-7f3a@alpina.at>": {"intent": "price_request", "language": "de", "confidence": 0.95, "summary": "Quote request Linz to Antwerp, pick-up 14 Oct, 24 t.",
+    "requests": [{"origin": "Linz", "destination": "Antwerpen", "pickup_date": "2026-10-14", "pickup_date_text": "14.10.", "weight_kg": 24000, "references_previous_order": false}]},
+  "<e2-91bc@nordfood.de>": {"intent": "price_request", "language": "en", "confidence": 0.9, "summary": "Asks the price for Hamburg to Milan next week; no date or weight.",
+    "requests": [{"origin": "Hamburg", "destination": "Milan", "pickup_date": null, "pickup_date_text": "next week", "weight_kg": null, "references_previous_order": false}]},
+  "<e3-22de@nordfood.de>": {"intent": "reply_to_clarification", "language": "en", "confidence": 0.9, "summary": "Supplies pick-up date 20 Oct and weight 12 t for the open request.",
+    "requests": [{"origin": null, "destination": null, "pickup_date": "2026-10-20", "pickup_date_text": "20.10.", "weight_kg": 12000, "references_previous_order": false}]},
+  "<e4-5a10@steiner.at>": {"intent": "price_request", "language": "de", "confidence": 0.95, "summary": "Two quote requests from Graz: to Lyon and to Paris.",
+    "requests": [{"origin": "Graz", "destination": "Lyon", "pickup_date": "2026-10-15", "pickup_date_text": "15.10.", "weight_kg": 10000, "references_previous_order": false},
+                 {"origin": "Graz", "destination": "Paris", "pickup_date": "2026-10-16", "pickup_date_text": "16.10.", "weight_kg": 8000, "references_previous_order": false}]},
+  "<e5-0c77@alpina.at>": {"intent": "other", "language": "de", "confidence": 0.97, "summary": "Asks to correct the address on invoice 4711.", "requests": []},
+  "<e6-3b98@alpina.at>": {"intent": "price_request", "language": "de", "confidence": 0.9, "summary": "Asks for a price for the same route as last time.",
+    "requests": [{"origin": null, "destination": null, "pickup_date": null, "pickup_date_text": null, "weight_kg": null, "references_previous_order": true}]}
+}

@@ -1,0 +1,17 @@
+[
+  {"id": "E1", "message_id": "<e1-7f3a@alpina.at>", "sender": "einkauf@alpina.at", "subject": "Angebot Linz - Antwerpen",
+   "body": "Bitte um Angebot: Linz → Antwerpen, Abholung 14.10., 24 t.", "received_at": "2026-10-06T08:12:00+00:00"},
+  {"id": "E1-dup", "message_id": "<e1-7f3a@alpina.at>", "sender": "einkauf@alpina.at", "subject": "Angebot Linz - Antwerpen",
+   "body": "Bitte um Angebot: Linz → Antwerpen, Abholung 14.10., 24 t.", "received_at": "2026-10-06T08:12:00+00:00"},
+  {"id": "E2", "message_id": "<e2-91bc@nordfood.de>", "sender": "logistics@nordfood.de", "subject": "Transport Hamburg - Milan",
+   "body": "What would a transport Hamburg – Milan cost next week?", "received_at": "2026-10-06T09:30:00+00:00"},
+  {"id": "E3", "message_id": "<e3-22de@nordfood.de>", "sender": "logistics@nordfood.de", "subject": "Re: Transport Hamburg - Milan",
+   "body": "Pick-up on 20.10., 12 t.", "received_at": "2026-10-07T10:05:00+00:00",
+   "in_reply_to": "<e2-91bc@nordfood.de>", "references": ["<e2-91bc@nordfood.de>"]},
+  {"id": "E4", "message_id": "<e4-5a10@steiner.at>", "sender": "dispo@steiner.at", "subject": "Preisanfrage Graz",
+   "body": "Brauchen Preise für Graz → Lyon (10 t, 15.10.) und Graz → Paris (8 t, 16.10.).", "received_at": "2026-10-06T11:00:00+00:00"},
+  {"id": "E5", "message_id": "<e5-0c77@alpina.at>", "sender": "buchhaltung@alpina.at", "subject": "Rechnung Nr. 4711",
+   "body": "Rechnung Nr. 4711 – bitte um Korrektur der Adresse.", "received_at": "2026-10-06T13:20:00+00:00"},
+  {"id": "E6", "message_id": "<e6-3b98@alpina.at>", "sender": "einkauf@alpina.at", "subject": "Preisanfrage",
+   "body": "Gleiche Strecke wie letztes Mal, bitte um Preis.", "received_at": "2026-10-07T09:00:00+00:00"}
+]

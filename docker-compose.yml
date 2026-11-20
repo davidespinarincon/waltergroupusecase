@@ -1,0 +1,44 @@
+services:
+  pricing-api:
+    build: .
+    command: ["uvicorn", "pricing_api.main:app", "--host", "0.0.0.0", "--port", "8001"]
+    environment:
+      FAILURE_RATE: "0.0"
+      APP_TODAY: ${APP_TODAY:-2026-10-07}
+    ports: ["8001:8001"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8001/health')"]
+      interval: 5s
+      retries: 10
+
+  workflow-api:
+    build: .
+    environment:
+      PRICING_URL: http://pricing-api:8001
+      DB_PATH: /srv/var/walter.db
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      EXTRACTOR: ${EXTRACTOR:-auto}
+      EXTRACTION_MODEL: ${EXTRACTION_MODEL:-claude-haiku-5-5}
+      # Pins the business date so the October case-study emails are not "in the past".
+      # Set APP_TODAY= (empty) to use the real date.
+      APP_TODAY: ${APP_TODAY:-2026-10-07}
+    volumes: ["walter-data:/srv/var"]
+    ports: ["8000:8000"]
+    depends_on:
+      pricing-api: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 5s
+      retries: 10
+
+  ui:
+    build: .
+    command: ["streamlit", "run", "ui/streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0", "--browser.gatherUsageStats=false"]
+    environment:
+      WORKFLOW_URL: http://workflow-api:8000
+    ports: ["8501:8501"]
+    depends_on:
+      workflow-api: {condition: service_healthy}
+
+volumes:
+  walter-data:

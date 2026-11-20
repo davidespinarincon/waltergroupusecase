@@ -1,0 +1,275 @@
+[
+  {
+    "email": "E1",
+    "message_id": "<e1-7f3a@alpina.at>",
+    "thread_id": "<e1-7f3a@alpina.at>",
+    "decision": "SEND_PRICE",
+    "reasons": [
+      "Price 1,663.27 EUR",
+      "All required fields present and within limits"
+    ],
+    "extraction": {
+      "intent": "price_request",
+      "language": "de",
+      "confidence": 0.93,
+      "requests": [
+        {
+          "origin": "Linz",
+          "destination": "Antwerp",
+          "pickup_date": "2026-10-14",
+          "pickup_date_text": "14.10.",
+          "weight_kg": 24000.0,
+          "references_previous_order": false
+        }
+      ],
+      "summary": "Customer requests a price for a 24 t transport from Linz to Antwerp with pickup on 14 October."
+    },
+    "outcomes": [
+      {
+        "request": {
+          "origin": "Linz",
+          "destination": "Antwerp",
+          "pickup_date": "2026-10-14",
+          "pickup_date_text": "14.10.",
+          "weight_kg": 24000.0,
+          "references_previous_order": false
+        },
+        "missing": [],
+        "reasons": [],
+        "quote": {
+          "price": 1663.27,
+          "currency": "EUR",
+          "validUntil": "2026-10-14"
+        }
+      }
+    ],
+    "reply_draft": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Anfrage. Gerne bieten wir Ihnen folgende Transporte an:\n\n- Linz → Antwerp, Abholung 14.10.2026, 24.000 kg: 1.663,27 EUR (gültig bis 14.10.2026)\n\nMit freundlichen Grüßen\nIhr LKW WALTER Team",
+    "processing_ms": 2454
+  },
+  {
+    "email": "E1 (duplicate)",
+    "message_id": "<e1-7f3a@alpina.at>",
+    "thread_id": "<e1-7f3a@alpina.at>",
+    "decision": "IGNORE",
+    "reasons": [
+      "Duplicate delivery of Message-ID <e1-7f3a@alpina.at> (already processed: SEND_PRICE)"
+    ],
+    "extraction": null,
+    "outcomes": [],
+    "reply_draft": null,
+    "processing_ms": 0
+  },
+  {
+    "email": "E2",
+    "message_id": "<e2-91bc@nordfood.de>",
+    "thread_id": "<e2-91bc@nordfood.de>",
+    "decision": "ASK_CUSTOMER",
+    "reasons": [
+      "missing pickup_date, weight_kg"
+    ],
+    "extraction": {
+      "intent": "price_request",
+      "language": "en",
+      "confidence": 0.9,
+      "requests": [
+        {
+          "origin": "Hamburg",
+          "destination": "Milan",
+          "pickup_date": null,
+          "pickup_date_text": "next week",
+          "weight_kg": null,
+          "references_previous_order": false
+        }
+      ],
+      "summary": "Customer asks for a price for a Hamburg to Milan transport next week."
+    },
+    "outcomes": [
+      {
+        "request": {
+          "origin": "Hamburg",
+          "destination": "Milan",
+          "pickup_date": null,
+          "pickup_date_text": "next week",
+          "weight_kg": null,
+          "references_previous_order": false
+        },
+        "missing": [
+          "pickup_date",
+          "weight_kg"
+        ],
+        "reasons": [],
+        "quote": null
+      }
+    ],
+    "reply_draft": "Dear Sir or Madam,\n\nthank you for your request. To give you a binding quote we still need the following details:\n\nTransport Hamburg → Milan:\n- exact pick-up date\n- weight (kg)\n\nKind regards\nYour LKW WALTER team",
+    "processing_ms": 1597
+  },
+  {
+    "email": "E3",
+    "message_id": "<e3-22de@nordfood.de>",
+    "thread_id": "<e2-91bc@nordfood.de>",
+    "decision": "SEND_PRICE",
+    "reasons": [
+      "Merged with open request of thread <e2-91bc@nordfood.de>",
+      "Price 1,557.04 EUR",
+      "All required fields present and within limits"
+    ],
+    "extraction": {
+      "intent": "reply_to_clarification",
+      "language": "en",
+      "confidence": 0.9,
+      "requests": [
+        {
+          "origin": "Hamburg",
+          "destination": "Milan",
+          "pickup_date": "2026-10-20",
+          "pickup_date_text": "20.10.",
+          "weight_kg": 12000.0,
+          "references_previous_order": false
+        }
+      ],
+      "summary": "Customer supplies pickup date 20.10. and weight 12 t for the open Hamburg to Milan request."
+    },
+    "outcomes": [
+      {
+        "request": {
+          "origin": "Hamburg",
+          "destination": "Milan",
+          "pickup_date": "2026-10-20",
+          "pickup_date_text": "20.10.",
+          "weight_kg": 12000.0,
+          "references_previous_order": false
+        },
+        "missing": [],
+        "reasons": [],
+        "quote": {
+          "price": 1557.04,
+          "currency": "EUR",
+          "validUntil": "2026-10-14"
+        }
+      }
+    ],
+    "reply_draft": "Dear Sir or Madam,\n\nthank you for your request. We are pleased to offer the following transports:\n\n- Hamburg → Milan, pick-up 2026-10-20, 12,000 kg: 1,557.04 EUR (valid until 2026-10-14)\n\nKind regards\nYour LKW WALTER team",
+    "processing_ms": 1802
+  },
+  {
+    "email": "E4",
+    "message_id": "<e4-5a10@steiner.at>",
+    "thread_id": "<e4-5a10@steiner.at>",
+    "decision": "SEND_PRICE",
+    "reasons": [
+      "Request 1: Price 1,396.25 EUR",
+      "Request 2: Price 1,570.39 EUR",
+      "All required fields present and within limits"
+    ],
+    "extraction": {
+      "intent": "price_request",
+      "language": "de",
+      "confidence": 0.95,
+      "requests": [
+        {
+          "origin": "Graz",
+          "destination": "Lyon",
+          "pickup_date": "2026-10-15",
+          "pickup_date_text": "15.10.",
+          "weight_kg": 10000.0,
+          "references_previous_order": false
+        },
+        {
+          "origin": "Graz",
+          "destination": "Paris",
+          "pickup_date": "2026-10-16",
+          "pickup_date_text": "16.10.",
+          "weight_kg": 8000.0,
+          "references_previous_order": false
+        }
+      ],
+      "summary": "Customer requests prices for two transports from Graz: to Lyon (10 t, 15 Oct) and to Paris (8 t, 16 Oct)."
+    },
+    "outcomes": [
+      {
+        "request": {
+          "origin": "Graz",
+          "destination": "Lyon",
+          "pickup_date": "2026-10-15",
+          "pickup_date_text": "15.10.",
+          "weight_kg": 10000.0,
+          "references_previous_order": false
+        },
+        "missing": [],
+        "reasons": [],
+        "quote": {
+          "price": 1396.25,
+          "currency": "EUR",
+          "validUntil": "2026-10-14"
+        }
+      },
+      {
+        "request": {
+          "origin": "Graz",
+          "destination": "Paris",
+          "pickup_date": "2026-10-16",
+          "pickup_date_text": "16.10.",
+          "weight_kg": 8000.0,
+          "references_previous_order": false
+        },
+        "missing": [],
+        "reasons": [],
+        "quote": {
+          "price": 1570.39,
+          "currency": "EUR",
+          "validUntil": "2026-10-14"
+        }
+      }
+    ],
+    "reply_draft": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Anfrage. Gerne bieten wir Ihnen folgende Transporte an:\n\n- Graz → Lyon, Abholung 15.10.2026, 10.000 kg: 1.396,25 EUR (gültig bis 14.10.2026)\n- Graz → Paris, Abholung 16.10.2026, 8.000 kg: 1.570,39 EUR (gültig bis 14.10.2026)\n\nMit freundlichen Grüßen\nIhr LKW WALTER Team",
+    "processing_ms": 1712
+  },
+  {
+    "email": "E5",
+    "message_id": "<e5-0c77@alpina.at>",
+    "thread_id": "<e5-0c77@alpina.at>",
+    "decision": "HANDOVER_HUMAN",
+    "reasons": [
+      "Not a price request (intent=other: Accounting at Alpina asks for a correction of the address on invoice no. 4711.)"
+    ],
+    "extraction": {
+      "intent": "other",
+      "language": "de",
+      "confidence": 0.9,
+      "requests": [],
+      "summary": "Accounting at Alpina asks for a correction of the address on invoice no. 4711."
+    },
+    "outcomes": [],
+    "reply_draft": null,
+    "processing_ms": 1541
+  },
+  {
+    "email": "E6",
+    "message_id": "<e6-3b98@alpina.at>",
+    "thread_id": "<e6-3b98@alpina.at>",
+    "decision": "HANDOVER_HUMAN",
+    "reasons": [
+      "Extraction confidence 0.70 < 0.80"
+    ],
+    "extraction": {
+      "intent": "price_request",
+      "language": "de",
+      "confidence": 0.7,
+      "requests": [
+        {
+          "origin": null,
+          "destination": null,
+          "pickup_date": null,
+          "pickup_date_text": null,
+          "weight_kg": null,
+          "references_previous_order": true
+        }
+      ],
+      "summary": "Customer asks for a price for the same route as their last transport, without stating the route, date or weight."
+    },
+    "outcomes": [],
+    "reply_draft": null,
+    "processing_ms": 1421
+  }
+]

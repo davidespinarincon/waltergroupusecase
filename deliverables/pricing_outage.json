@@ -1,0 +1,23 @@
+{
+  "scenario": "Pricing API returns 503 on every call (E1)",
+  "1_first_attempt": {
+    "decision": "RETRY_LATER",
+    "reasons": [
+      "Pricing API unavailable: pricing API failed after 4 attempts (HTTP 503)"
+    ]
+  },
+  "2_retry_after_10_min": {
+    "decision": "RETRY_LATER",
+    "reasons": [
+      "Retry at 2026-11-20T19:47:11+00:00",
+      "Pricing API unavailable: pricing API failed after 4 attempts (HTTP 503)"
+    ]
+  },
+  "3_retry_after_31_min": {
+    "decision": "HANDOVER_HUMAN",
+    "reasons": [
+      "Retry at 2026-11-20T20:08:15+00:00",
+      "HANDOVER: pricing API down for 31 min (≥ 30 min)"
+    ]
+  }
+}
